@@ -1,0 +1,23 @@
+FROM centos:7
+
+LABEL maintainer "29ygq@sina.com"
+
+RUN yum -y install openssl \
+  curl \
+  bash \
+  ca-certificates \
+  git \
+  bash-doc \
+  bash-completion \
+  wget \
+  tcpdump \
+  mtr \
+  nmap-ncat \
+  net-tools \
+  iftop \
+  iotop \
+  openssh-client \
+  bind-utils \
+  && rm -rf /var/cache/yum/*
+
+ENTRYPOINT ["/bin/bash"]
